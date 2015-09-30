@@ -11,19 +11,16 @@ Thermostat.prototype.increaseTemperature = function() {
   if (this._isAllowedToIncreaseTemp()) {
     this.temperature += 1;
   };
-  // htmlChanges();
 };
 
 Thermostat.prototype.decreaseTemperature = function() {
   if (this.temperature > 10) {
     this.temperature -= 1;
   };
-  // htmlChanges();
 };
 
 Thermostat.prototype.resetTemperature = function() {
   this.temperature = 20;
-  // htmlChanges();
 };
 
 Thermostat.prototype.colour = function() {
