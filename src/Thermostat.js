@@ -1,5 +1,5 @@
 function Thermostat() {
-  this.temperature = 200;
+  this.temperature = 20;
   this.powerSavingMode = true;
 };
 
@@ -11,16 +11,19 @@ Thermostat.prototype.increaseTemperature = function() {
   if (this._isAllowedToIncreaseTemp()) {
     this.temperature += 1;
   };
+  htmlChanges();
 };
 
 Thermostat.prototype.decreaseTemperature = function() {
   if (this.temperature > 10) {
     this.temperature -= 1;
   };
+  htmlChanges();
 };
 
 Thermostat.prototype.resetTemperature = function() {
   this.temperature = 20;
+  htmlChanges();
 };
 
 Thermostat.prototype.colour = function() {
@@ -42,3 +45,12 @@ Thermostat.prototype._isAllowedToIncreaseTemp = function() {
 
 
 thermostat = new Thermostat();
+
+var htmlChanges = function(){
+  document.getElementById("temperature").innerHTML = thermostat.temperature;
+};
+
+var testinc = function(){
+  thermostat.increaseTemperature();
+  document.getElementById("temperature").innerHTML = thermostat.temperature;
+};

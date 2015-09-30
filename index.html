@@ -7,24 +7,26 @@
   <div style='display: block'>
     <h1>Thermostat</h1>
   </div>
-
   <div style='float: left'>
-    <h1><span id='temperature'></span> <sup>o</sup> C</h1>
+    <h1><span id='temperature'>20</span> <sup>o</sup> C</h1>
   </div>
 
-  <div style='clear: left'>
-    <form>
-      <input type='submit' value='Up'>
-      <input type='submit' value='Down'>
-      Power Saving Mode <input type='radio' name='powerSaving' value='true'>
-      <input type='submit' value='Reset'>
-    </form>
+  <div style="clear:left; display:block">
+    <div style='clear:left;display:inline-block'>
+      <button onclick="testinc();">Up</button>
+      <button onclick="thermostat.decreaseTemperature();">Down</button>
+    </div>
+    <div style="display:inline-block">
+      <form>
+        Power Saving Mode <input type='checkbox' checked onclick="thermostat.switchPowerSaving();">
+      </form>
+    </div>
+    <div style='display:inline-block'>
+      <button onclick="thermostat.resetTemperature();">Reset</button>
+    </div>
   </div>
 
-  <script>
 
-  document.getElementById("temperature").innerHTML = thermostat.temperature;
-  </script>
 
 </body>
 
