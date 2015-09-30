@@ -8,17 +8,14 @@ Thermostat.prototype.switchPowerSaving = function() {
 };
 
 Thermostat.prototype.increaseTemperature = function() {
-  if (this.temperature < 25 && this.powerSavingMode){
-    this.temperature = this.temperature + 1;
-  };
-  if (this.temperature < 32 && !this.powerSavingMode){
-    this.temperature = this.temperature + 1;
+  if (this._isAllowedToIncreaseTemp()) {
+    this.temperature += 1;
   };
 };
 
 Thermostat.prototype.decreaseTemperature = function() {
   if (this.temperature > 10) {
-    this.temperature = this.temperature - 1;
+    this.temperature -= 1;
   };
 };
 
@@ -36,4 +33,9 @@ Thermostat.prototype.colour = function() {
   else {
     return "yellow";
   };
+};
+
+Thermostat.prototype._isAllowedToIncreaseTemp = function() {
+  return (this.temperature < 25 && this.powerSavingMode) ||
+          (this.temperature < 32 && !this.powerSavingMode);
 };
