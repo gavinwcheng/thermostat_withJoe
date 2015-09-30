@@ -31,7 +31,7 @@ Thermostat.prototype.colour = function() {
     return "red";
   }
   else {
-    return "yellow";
+    return "blue";
   };
 };
 
