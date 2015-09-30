@@ -1,5 +1,4 @@
 describe("Thermostat",function() {
-
   var thermostat;
 
   beforeEach(function() {
@@ -7,7 +6,6 @@ describe("Thermostat",function() {
   });
 
   describe("when created",function() {
-
     it("has a starting temperature of 20 degress",function() {
       expect(thermostat.temperature).toEqual(20);
     });
@@ -18,7 +16,6 @@ describe("Thermostat",function() {
   });
 
   describe("can turn powersaving on and off",function() {
-
     it("turning powersaving off",function() {
       thermostat.switchPowerSaving();
       expect(thermostat.powerSavingMode).toBe(false);
@@ -29,11 +26,9 @@ describe("Thermostat",function() {
       thermostat.switchPowerSaving();
       expect(thermostat.powerSavingMode).toBe(true);
     });
-
   });
 
   describe("can change the temperature",function() {
-
     it("incresae temperature by 1 degree",function() {
       thermostat.increaseTemperature();
       expect(thermostat.temperature).toEqual(21);
@@ -74,7 +69,6 @@ describe("Thermostat",function() {
         thermostat.increaseTemperature();
       };
       thermostat.resetTemperature();
-      // reset everything
       expect(thermostat.temperature).toEqual(20);
     });
   });
@@ -96,9 +90,7 @@ describe("Thermostat",function() {
     });
 
     it("is yellow when between 18 and 25 degrees",function() {
-      expect(thermostat.colour()).toEqual("yellow");
+      expect(thermostat.colour()).toEqual("blue");
     });
-
   });
-
 });

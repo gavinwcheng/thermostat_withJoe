@@ -1,29 +1,29 @@
 thermostat = new Thermostat();
 
-var userInteract = function(interaction) {
-  interaction;
-  updateHtmlTemperature();
+var updateThermostat = function(callMethodOnThermostat) {
+  callMethodOnThermostat;
+  updateHTML();
 };
 
-var updateHtmlTemperature = function() {
+var updateHTML = function() {
   document.getElementById("temperature").innerHTML = thermostat.temperature;
   document.getElementById("temperature").style.color = thermostat.colour();
 };
 
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById("Up").addEventListener("click", function() {
-    userInteract(thermostat.increaseTemperature());
+    updateThermostat(thermostat.increaseTemperature());
   });
 
   document.getElementById("Down").addEventListener("click", function() {
-    userInteract(thermostat.decreaseTemperature());
+    updateThermostat(thermostat.decreaseTemperature());
   });
 
   document.getElementById("Reset").addEventListener("click", function() {
-    userInteract(thermostat.resetTemperature());
+    updateThermostat(thermostat.resetTemperature());
   });
 
-  document.getElementById("PowerSaver").addEventListener("click", function() {
-    userInteract(thermostat.switchPowerSaving());
+  document.getElementById("PowerSave").addEventListener("click", function() {
+    updateThermostat(thermostat.switchPowerSaving());
   });
 });
