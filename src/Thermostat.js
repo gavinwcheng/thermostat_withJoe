@@ -1,5 +1,5 @@
 function Thermostat() {
-  this.temperature = 20;
+  this.temperature = 200;
   this.powerSavingMode = true;
 };
 
@@ -39,3 +39,6 @@ Thermostat.prototype._isAllowedToIncreaseTemp = function() {
   return (this.temperature < 25 && this.powerSavingMode) ||
           (this.temperature < 32 && !this.powerSavingMode);
 };
+
+
+thermostat = new Thermostat();

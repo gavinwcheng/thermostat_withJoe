@@ -1,10 +1,15 @@
+<head>
+  <meta charset="utf-8">
+  <title>Joe and Gavin</title>
+  <script src="src/Thermostat.js"></script>
+</head>
 <body>
   <div style='display: block'>
     <h1>Thermostat</h1>
   </div>
 
   <div style='float: left'>
-    <h1><span id='temp'>20</span> <sup>o</sup> C</h1>
+    <h1><span id='temperature'></span> <sup>o</sup> C</h1>
   </div>
 
   <div style='clear: left'>
@@ -16,4 +21,41 @@
     </form>
   </div>
 
+  <script>
+
+  document.getElementById("temperature").innerHTML = thermostat.temperature;
+  </script>
+
 </body>
+
+
+<!-- <html>
+<body>
+
+<p id="p1">Hello World!</p>
+
+<script>
+document.getElementById("p1").innerHTML = "New text!";
+</script>
+
+</body>
+</html> -->
+
+<!--
+<html>
+<head>
+  <title>getElementById example</title>
+  <script>
+  function changeColor(newColor) {
+    var elem = document.getElementById("para1");
+    elem.style.color = newColor;
+  }
+  </script>
+</head>
+<body>
+  <p id="para1">Some text here</p>
+  <button onclick="changeColor('blue');">blue</button>
+  <button onclick="changeColor('red');">red</button>
+  <script>changeColor("yellow");</script>
+</body>
+</html> -->
