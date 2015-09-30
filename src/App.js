@@ -1,13 +1,13 @@
 thermostat = new Thermostat();
 
+var updateHTML = function() {
+  document.getElementById("Temp").innerHTML = thermostat.temperature;
+  document.getElementById("Temp").style.color = thermostat.colour();
+};
+
 var updateThermostat = function(callMethodOnThermostat) {
   callMethodOnThermostat;
   updateHTML();
-};
-
-var updateHTML = function() {
-  document.getElementById("temperature").innerHTML = thermostat.temperature;
-  document.getElementById("temperature").style.color = thermostat.colour();
 };
 
 document.addEventListener('DOMContentLoaded', function() {
