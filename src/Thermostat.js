@@ -11,19 +11,19 @@ Thermostat.prototype.increaseTemperature = function() {
   if (this._isAllowedToIncreaseTemp()) {
     this.temperature += 1;
   };
-  htmlChanges();
+  // htmlChanges();
 };
 
 Thermostat.prototype.decreaseTemperature = function() {
   if (this.temperature > 10) {
     this.temperature -= 1;
   };
-  htmlChanges();
+  // htmlChanges();
 };
 
 Thermostat.prototype.resetTemperature = function() {
   this.temperature = 20;
-  htmlChanges();
+  // htmlChanges();
 };
 
 Thermostat.prototype.colour = function() {
@@ -41,16 +41,4 @@ Thermostat.prototype.colour = function() {
 Thermostat.prototype._isAllowedToIncreaseTemp = function() {
   return (this.temperature < 25 && this.powerSavingMode) ||
           (this.temperature < 32 && !this.powerSavingMode);
-};
-
-
-thermostat = new Thermostat();
-
-var htmlChanges = function(){
-  document.getElementById("temperature").innerHTML = thermostat.temperature;
-};
-
-var testinc = function(){
-  thermostat.increaseTemperature();
-  document.getElementById("temperature").innerHTML = thermostat.temperature;
 };

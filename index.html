@@ -2,7 +2,9 @@
   <meta charset="utf-8">
   <title>Joe and Gavin</title>
   <script src="src/Thermostat.js"></script>
+  <script src="src/App.js"></script>
 </head>
+
 <body>
   <div style='display: block'>
     <h1>Thermostat</h1>
@@ -13,51 +15,18 @@
 
   <div style="clear:left; display:block">
     <div style='clear:left;display:inline-block'>
-      <button onclick="testinc();">Up</button>
-      <button onclick="thermostat.decreaseTemperature();">Down</button>
+      <button id="Up">Up</button>
+      <button onclick="userInterate(thermostat.decreaseTemperature());">Down</button>
     </div>
+
     <div style="display:inline-block">
       <form>
-        Power Saving Mode <input type='checkbox' checked onclick="thermostat.switchPowerSaving();">
+        Power Saving Mode <input type='checkbox' checked onclick="userInterate(thermostat.switchPowerSaving());">
       </form>
     </div>
+
     <div style='display:inline-block'>
-      <button onclick="thermostat.resetTemperature();">Reset</button>
+      <button onclick="userInterate(thermostat.resetTemperature());">Reset</button>
     </div>
-  </div>
-
-
-
+ </div>
 </body>
-
-
-<!-- <html>
-<body>
-
-<p id="p1">Hello World!</p>
-
-<script>
-document.getElementById("p1").innerHTML = "New text!";
-</script>
-
-</body>
-</html> -->
-
-<!--
-<html>
-<head>
-  <title>getElementById example</title>
-  <script>
-  function changeColor(newColor) {
-    var elem = document.getElementById("para1");
-    elem.style.color = newColor;
-  }
-  </script>
-</head>
-<body>
-  <p id="para1">Some text here</p>
-  <button onclick="changeColor('blue');">blue</button>
-  <button onclick="changeColor('red');">red</button>
-  <script>changeColor("yellow");</script>
-</body>
-</html> -->
